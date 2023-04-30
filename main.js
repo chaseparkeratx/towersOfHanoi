@@ -24,16 +24,12 @@ const printStacks = () => {
 
 
 const movePiece = (startStack, endStack) => {
-  // take the last part of the array, make it a 'piece'
-  // push it to next stack
 const startPiece = stacks[startStack].pop();
 stacks[endStack].push(startPiece);
 return true;
 }
 
 const isLegal = (startStack, endStack) => {
-  // take the last piece from the first and second choice 
-  // if the second stack is empty or a larger number than the first, return true
    const startPiece = stacks[startStack][stacks[startStack].length - 1];
    const endPiece = stacks[endStack][stacks[endStack].length - 1];
     return !endPiece || startPiece < endPiece 
@@ -41,7 +37,6 @@ const isLegal = (startStack, endStack) => {
 
 
 const checkForWin = () => {
-  // if either stack b or c have a length of 4, return true
   return stacks.b.length === 4 || stacks.c.length === 4;
 }
 
